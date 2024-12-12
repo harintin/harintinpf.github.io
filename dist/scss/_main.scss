@@ -1,0 +1,18 @@
+.intro {
+    height: 100vh;
+}
+.intro-bg {
+    background-image: url("../../images/intro_bg.png");
+    filter: blur(50px);
+}
+.intro_titles {
+    position: relative;
+    mix-blend-mode: difference;
+    padding-left: 50px;
+    padding-top: 250px;
+}
+.intro_titles .intro_title {
+    font-size: $title;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
