@@ -197,6 +197,35 @@ body {
 .wrap {
   background-color: #000;
   position: relative;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  top: 40px;
+  left: 0;
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+
+.header_inner {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_text {
+  font-size: 18px;
+  font-family: "Roboto";
+}
+
+.header_text02 {
+  display: flex;
+  align-items: center;
+}
+.header_text02 p {
+  padding-right: 10px;
 }
 
 section {
@@ -275,6 +304,10 @@ section {
   justify-content: center;
 }
 
+.text_motion {
+  display: block;
+}
+
 .marquee_container {
   position: relative;
   overflow: hidden;
@@ -282,14 +315,33 @@ section {
 
 .marquee_items {
   display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee_item {
   flex: 0 0 auto;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.glass_box {
+  position: absolute;
+  width: 400px;
+  height: 620px;
+  background-image: url("../../images/glass_box01.png");
+  border-radius: 60px;
+  backdrop-filter: blur(10px);
+}
+
 .intro {
-  height: 100vh;
+  height: 1080px;
 }
 
 .intro_marquee_bg {
@@ -309,7 +361,7 @@ section {
   overflow: hidden;
   top: 0;
   right: 0;
-  filter: blur(5px);
+  filter: blur(7px);
 }
 
 .intro_marquee_items {
@@ -320,6 +372,7 @@ section {
 
 .intro_marquee_text {
   font-size: 120px;
+  white-space: nowrap;
 }
 
 .intro_bg {
@@ -333,6 +386,8 @@ section {
 }
 
 .intro_titles {
+  margin-top: 235px;
+  height: 400px;
   position: relative;
   mix-blend-mode: difference;
   padding-left: 50px;
@@ -343,6 +398,7 @@ section {
   font-size: 110px;
   line-height: 0.95;
   letter-spacing: -0.05em;
+  overflow: hidden;
 }
 
 .intro_texts {
@@ -355,7 +411,7 @@ section {
 }
 
 .menu {
-  height: 100vh;
+  height: 1080px;
   overflow: visible;
 }
 
@@ -396,14 +452,12 @@ section {
 
 .menu_titles {
   align-items: flex-end;
+  overflow: hidden;
 }
 
 .menu_title {
   font-size: 120px;
   letter-spacing: -0.05em;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  cursor: pointer;
 }
 
 .menu_num {
@@ -432,4 +486,43 @@ section {
 
 .about {
   height: 100vh;
+  overflow: visible;
+}
+
+.about_bg {
+  top: 0;
+  right: 0;
+  background-image: url("../../images/about_bg.png");
+  background-size: auto 2500px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.about_title {
+  mix-blend-mode: difference;
+  font-size: 240px;
+  letter-spacing: -0.05em;
+  line-height: 0.8333;
+  text-align: right;
+  overflow: hidden;
+  justify-content: flex-end;
+}
+.about_title .type {
+  display: block;
+}
+.about_title:first-child {
+  padding-top: 250px;
+}
+
+.glass_box01 {
+  top: 420px;
+  right: 16%;
+  z-index: 1;
+  transform: rotate(-30deg);
+}
+
+.glass_box02 {
+  top: -230px;
+  right: -22%;
+  transform: rotate(-160deg);
 }

@@ -1,5 +1,5 @@
 .intro {
-    height: 100vh;
+    height: 1080px;
 }
 .intro_marquee_bg {
     width: 50%;
@@ -17,7 +17,7 @@
     overflow: hidden;
     top: 0;
     right: 0;
-    filter: blur(5px);
+    filter: blur(7px);
 }
 .intro_marquee_items {
     width: 100%;
@@ -26,6 +26,7 @@
 }
 .intro_marquee_text {
     font-size: 120px;
+    white-space: nowrap;
 }
 .intro_bg {
     background-image: url("../../images/intro_bg.png");
@@ -36,16 +37,18 @@
     height: 100%;
 }
 .intro_titles {
+    margin-top: 235px;
+    height: 400px;
     position: relative;
     mix-blend-mode: difference;
     padding-left: 50px;
-    // padding-top: 250px;
     margin-bottom: 85px;
 }
 .intro_titles .intro_title {
     font-size: $title;
     line-height: 0.95;
     letter-spacing: -0.05em;
+    overflow: hidden;
 }
 .intro_texts {
     padding-left: 180px;
@@ -57,7 +60,7 @@
 
 // menu
 .menu {
-    height: 100vh;
+    height: 1080px;
     overflow: visible;
 }
 .menu_bg {
@@ -92,13 +95,13 @@
 }
 .menu_titles {
     align-items: flex-end;
+    overflow: hidden;
 }
 .menu_title {
     font-size: $menu_title;
     letter-spacing: -0.05em;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    cursor: pointer;
+    // transform: translateY(130px);
+    // transition: all 0.5s;
 }
 .menu_num {
     font-size: 28px;
@@ -116,6 +119,9 @@
     transition: all 0.15s;
 }
 .menu_box:hover {
+    // .menu_title {
+    //     transform: translateY(0);
+    // }
     .menu_btn {
         background-color: #fff;
         .menu_btn_icon path {
@@ -127,4 +133,39 @@
 // about
 .about {
     height: 100vh;
+    overflow: visible;
+}
+.about_bg {
+    top: 0;
+    right: 0;
+    background-image: url("../../images/about_bg.png");
+    background-size: auto 2500px;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.about_title {
+    mix-blend-mode: difference;
+    font-size: $main-title;
+    letter-spacing: -0.05em;
+    line-height: 0.8333;
+    text-align: right;
+    overflow: hidden;
+    justify-content: flex-end;
+    .type {
+        display: block;
+    }
+    &:first-child {
+        padding-top: 250px;
+    }
+}
+.glass_box01 {
+    top: 420px;
+    right: 16%;
+    z-index: 1;
+    transform: rotate(-30deg);
+}
+.glass_box02 {
+    top: -230px;
+    right: -22%;
+    transform: rotate(-160deg);
 }
