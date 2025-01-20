@@ -62,13 +62,21 @@ http://scripts.sil.org/OFL
         url("../fonts/Pretendard-Regular.woff") format("woff");
 }
 
+//HBIOS-SYS
+@font-face {
+    font-family: "HBIOS-SYS";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
 //variables
 $bg-color: #000;
 $txt-color: #fff;
 $w100: 100%;
 $title: 110px;
 $main-title: 240px;
-$nav-title: 120px;
+$menu-title: 120px;
 $desc: 22px;
 
 //styles
@@ -110,6 +118,9 @@ section {
 .abs {
     position: absolute;
 }
+.fw300 {
+    font-weight: 300;
+}
 .fw400 {
     font-weight: 400;
 }
@@ -121,4 +132,34 @@ section {
 }
 .dot {
     letter-spacing: 0.03em;
+}
+.flex {
+    display: flex;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// marquee
+.marquee_container {
+    position: relative;
+    overflow: hidden;
+    // height: 100%;
+}
+.marquee_items {
+    display: inline-flex;
+}
+.marquee_item {
+    flex: 0 0 auto;
 }

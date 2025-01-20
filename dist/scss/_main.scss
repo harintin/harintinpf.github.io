@@ -1,18 +1,130 @@
 .intro {
     height: 100vh;
 }
-.intro-bg {
+.intro_marquee_bg {
+    width: 50%;
+    height: 100%;
+    background-color: $bg-color;
+    filter: blur(100px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.intro_marquee_wrap {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    filter: blur(5px);
+}
+.intro_marquee_items {
+    width: 100%;
+    height: 150px;
+    gap: 60px;
+}
+.intro_marquee_text {
+    font-size: 120px;
+}
+.intro_bg {
     background-image: url("../../images/intro_bg.png");
     filter: blur(50px);
+    opacity: 0.8;
+}
+.intro_inner {
+    height: 100%;
 }
 .intro_titles {
     position: relative;
     mix-blend-mode: difference;
     padding-left: 50px;
-    padding-top: 250px;
+    // padding-top: 250px;
+    margin-bottom: 85px;
 }
 .intro_titles .intro_title {
     font-size: $title;
     line-height: 0.95;
     letter-spacing: -0.05em;
+}
+.intro_texts {
+    padding-left: 180px;
+}
+.intro_texts .intro_text {
+    line-height: 1.4;
+    font-size: $desc;
+}
+
+// menu
+.menu {
+    height: 100vh;
+    overflow: visible;
+}
+.menu_bg {
+    margin-top: -700px;
+    img {
+        width: 100%;
+    }
+}
+.menu_container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    mix-blend-mode: difference;
+}
+.menu_list {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+    &:first-child {
+        border-top: 1px solid #fff;
+    }
+}
+.menu_box {
+    width: 100%;
+    height: 100%;
+}
+.menu_wrap {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_titles {
+    align-items: flex-end;
+}
+.menu_title {
+    font-size: $menu_title;
+    letter-spacing: -0.05em;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.menu_num {
+    font-size: 28px;
+    font-family: "HBIOS-SYS";
+    padding-left: 20px;
+    padding-bottom: 12px;
+    opacity: 0.3;
+}
+.menu_btn {
+    width: 160px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: #000;
+    transition: all 0.15s;
+}
+.menu_box:hover {
+    .menu_btn {
+        background-color: #fff;
+        .menu_btn_icon path {
+            fill: #000;
+        }
+    }
+}
+
+// about
+.about {
+    height: 100vh;
 }
