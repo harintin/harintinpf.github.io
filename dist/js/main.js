@@ -100,5 +100,75 @@
           "-=0.4"
         );
     })();
+
+    // hover
+    const list = document.querySelectorAll(".work_list");
+
+    list.forEach((li_img) => {
+      li_img.addEventListener("mousemove", function (e) {
+        const hoverImage = li_img.querySelector(".hover_image");
+        if (hoverImage) {
+          // Get the position of the mouse relative to the work_list
+          const rect = li_img.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          // Update hover_image position
+          hoverImage.style.transform = `translate(${x}px, ${y}px)`;
+        }
+      });
+
+      li_img.addEventListener("mouseover", function () {
+        const hoverImage = li_img.querySelector(".hover_image");
+        if (hoverImage) {
+          hoverImage.style.visibility = "visible";
+        }
+      });
+
+      li_img.addEventListener("mouseleave", function () {
+        const hoverImage = li_img.querySelector(".hover_image");
+        if (hoverImage) {
+          hoverImage.style.visibility = "hidden";
+        }
+      });
+    });
+
+    $(function () {
+      let mouseCursor = document.querySelector(".custom-cursor");
+      window.addEventListener("scroll", cursor);
+      window.addEventListener("mousemove", cursor);
+
+      function cursor(e) {
+        mouseCursor.style.left = e.pageX + "px";
+        mouseCursor.style.top = e.pageY - scrollY + "px";
+      }
+
+      // CURSOR
+      var cursor = $(".custom-cursor");
+
+      var mouseX = 0,
+        mouseY = 0;
+
+      // cursor active area
+      $("html")
+        .on("mousemove", function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        })
+        .on("mouseenter", function (e) {
+          $(".custom-cursor").css("opacity", 1);
+        })
+        .on("mouseleave", function (e) {
+          $(".custom-cursor").css("opacity", 0);
+        });
+
+      $(".work_list")
+        .on("mouseenter", function (e) {
+          $(".custom-cursor").css("display", "none");
+        })
+        .on("mouseleave", function (e) {
+          $(".custom-cursor").css("display", "block");
+        });
+    });
   });
 })(jQuery);

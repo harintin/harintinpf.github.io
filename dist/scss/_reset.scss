@@ -127,7 +127,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+html {
+    cursor: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
 a {
+    cursor: none;
     color: inherit;
     text-decoration: none;
 }

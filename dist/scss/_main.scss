@@ -210,9 +210,10 @@
 .work {
     width: 100%;
     min-height: 100vh;
+    margin-top: -800px;
 }
 .work_bg {
-    top: -900px;
+    top: -700px;
     left: 0;
     height: 3200px;
     background-image: url("../../images/work_bg.png");
@@ -222,11 +223,71 @@
 }
 .work_title {
     position: absolute;
-    top: -400px;
+    top: 0;
     left: 0;
     font-size: $main-title;
     letter-spacing: -0.05em;
     mix-blend-mode: difference;
     writing-mode: vertical-lr;
     line-height: 0.71;
+}
+.work_lists {
+    align-items: flex-end;
+}
+.work_list {
+    max-width: 1440px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+    &:first-child {
+        border-top: 1px solid #fff;
+    }
+}
+.work_box {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+.work_box_wrap {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.work_number {
+    font-size: $menu-title;
+    padding-left: 34px;
+    font-style: italic;
+    letter-spacing: -0.05em;
+}
+.work_name {
+    font-size: 80px;
+    font-family: "Pretendard";
+    letter-spacing: -0.05em;
+    text-align: right;
+    white-space: nowrap;
+}
+.work_arrow {
+    padding-left: 60px;
+}
+.hover_image {
+    width: 400px;
+    height: 210px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1000;
+}
+.hover_image img {
+    width: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: 0.9;
 }
