@@ -100,6 +100,8 @@ body {
     mix-blend-mode: difference;
 }
 .header_inner {
+    padding: 0 20px;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
 }

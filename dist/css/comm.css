@@ -211,6 +211,8 @@ body {
 }
 
 .header_inner {
+  padding: 0 20px;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
 }
@@ -458,6 +460,7 @@ section {
 .menu_title {
   font-size: 120px;
   letter-spacing: -0.05em;
+  white-space: nowrap;
 }
 
 .menu_num {
@@ -466,6 +469,7 @@ section {
   padding-left: 20px;
   padding-bottom: 12px;
   opacity: 0.3;
+  white-space: nowrap;
 }
 
 .menu_btn {
@@ -485,7 +489,7 @@ section {
 }
 
 .about {
-  height: 100vh;
+  min-height: 2500px;
   overflow: visible;
 }
 
@@ -525,4 +529,68 @@ section {
   top: -230px;
   right: -22%;
   transform: rotate(-160deg);
+}
+
+.about_list {
+  position: relative;
+  font-family: "Pretendard";
+  font-size: 22px;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.about_list01::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 26px;
+  height: 26px;
+  display: block;
+  background-image: url("../../images/about_list_icon01.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.about_list02::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 26px;
+  height: 26px;
+  display: block;
+  background-image: url("../../images/about_list_icon02.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.about_name {
+  font-size: 32px;
+}
+
+.work {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.work_bg {
+  top: -900px;
+  left: 0;
+  height: 3200px;
+  background-image: url("../../images/work_bg.png");
+  background-size: auto 3200px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.work_title {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  font-size: 240px;
+  letter-spacing: -0.05em;
+  mix-blend-mode: difference;
+  writing-mode: vertical-lr;
+  line-height: 0.71;
 }

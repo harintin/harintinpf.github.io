@@ -12,8 +12,9 @@
           },
         })
         .from(".header", {
-          y: -300,
-          duration: 0.5,
+          opacity: 0,
+          y: -200,
+          duration: 1,
           ease: "expo.out",
         });
     })();
@@ -66,6 +67,9 @@
 
     // about 애니메이션
     (function () {
+      ScrollTrigger.defaults({
+        toggleActions: "restart pause resume reverse",
+      });
       gsap
         .timeline({
           scrollTrigger: {
