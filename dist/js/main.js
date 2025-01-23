@@ -132,43 +132,5 @@
         }
       });
     });
-
-    $(function () {
-      let mouseCursor = document.querySelector(".custom-cursor");
-      window.addEventListener("scroll", cursor);
-      window.addEventListener("mousemove", cursor);
-
-      function cursor(e) {
-        mouseCursor.style.left = e.pageX + "px";
-        mouseCursor.style.top = e.pageY - scrollY + "px";
-      }
-
-      // CURSOR
-      var cursor = $(".custom-cursor");
-
-      var mouseX = 0,
-        mouseY = 0;
-
-      // cursor active area
-      $("html")
-        .on("mousemove", function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        })
-        .on("mouseenter", function (e) {
-          $(".custom-cursor").css("opacity", 1);
-        })
-        .on("mouseleave", function (e) {
-          $(".custom-cursor").css("opacity", 0);
-        });
-
-      $(".work_list")
-        .on("mouseenter", function (e) {
-          $(".custom-cursor").css("display", "none");
-        })
-        .on("mouseleave", function (e) {
-          $(".custom-cursor").css("display", "block");
-        });
-    });
   });
 })(jQuery);

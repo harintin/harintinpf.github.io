@@ -133,15 +133,11 @@ table {
   border-spacing: 0;
 }
 
-html {
-  cursor: none;
-}
 html ::-webkit-scrollbar {
   display: none;
 }
 
 a {
-  cursor: none;
   color: inherit;
   text-decoration: none;
 }
@@ -350,21 +346,6 @@ section {
   backdrop-filter: blur(10px);
 }
 
-.custom-cursor {
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  background-color: #fff;
-  mix-blend-mode: difference;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
-.custom-cursor--link {
-  transform: translate(-50%, -50%) scale(1);
-}
-
 .intro {
   height: 1080px;
 }
@@ -467,6 +448,8 @@ section {
 .menu_box {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 5;
 }
 
 .menu_wrap {
