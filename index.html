@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./dist/vendors/gsap.min.js"></script>
     <script src="./dist/vendors/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="./dist/js/common.js"></script>
     <script src="./dist/js/main.js"></script>
@@ -56,6 +56,15 @@
       <section class="intro">
         <div class="intro_marquee_wrap marquee_container flex-col-center">
           <div class="intro_marquee_items marquee_items">
+            <div class="intro_marquee_item marquee_item">
+              <p class="intro_marquee_text fw700">UI · UX</p>
+            </div>
+            <div class="intro_marquee_item marquee_item">
+              <p class="intro_marquee_text">DEVELOPER</p>
+            </div>
+            <div class="intro_marquee_item marquee_item">
+              <p class="intro_marquee_text fw300">DESIGN</p>
+            </div>
             <div class="intro_marquee_item marquee_item">
               <p class="intro_marquee_text fw700">UI · UX</p>
             </div>
@@ -259,7 +268,12 @@
       <!-- work start -->
       <section id="work" class="work">
         <div class="work_bg bg-full"></div>
-        <p class="work_title"><span class="fw700">P</span>ROJECTS.</p>
+        <p class="work_title">
+          <span class="fw700 type">P</span><span class="type">R</span
+          ><span class="italic type">O</span><span class="type">J</span
+          ><span class="type">E</span><span class="type">C</span
+          ><span class="type">T</span><span class="type">S.</span>
+        </p>
         <ul id="work_lists" class="work_lists flex-col">
           <li class="work_list work_list01">
             <a
@@ -480,6 +494,75 @@
         </ul>
       </section>
       <!-- work end -->
+      <!-- resume start -->
+      <section id="resume" class="resume">
+        <div class="resume_inner inner">
+          <div class="resume_top rel flex">
+            <div class="resume_top_left rel flex">
+              <p class="resume_name fw500">최하린</p>
+              <p class="resume_name_en">CHOI HARIN</p>
+              <p class="resume_birth">1998. 10. 13</p>
+            </div>
+            <div class="resume_top_right rel">
+              <p class="resume_right_txt01">UI · UX</p>
+              <p class="resume_right_txt02">PUBLISHING</p>
+              <p class="resume_right_txt03">DEVELOP</p>
+            </div>
+            <div class="resume_deco glass_box"></div>
+          </div>
+          <p class="resume_title flex">
+            <span class="fw700 type">R</span><span class="type">E</span
+            ><span class="type">S</span><span class="type">U</span
+            ><span class="type">M</span><span class="type">E.</span>
+          </p>
+          <div class="resume_ex">
+            <p class="resume_ex_title fw500">
+              <span class="type">EXPERIENCE</span>
+            </p>
+            <ul class="resume_ex_lists inner flex-col">
+              <li class="resume_ex_list">
+                <div class="resume_ex_list_top flex">
+                  <p class="resume_ex_txt01 fw500">(주)뷰쓰리</p>
+                  <div class="resume_line"></div>
+                  <p class="resume_ex_txt02">
+                    <span class="fw700">2024</span> 02 - 09
+                  </p>
+                </div>
+                <p class="resume_ex_txt03">UI팀 웹 퍼블리셔 재직</p>
+              </li>
+              <li class="resume_ex_list">
+                <div class="resume_ex_list_top flex">
+                  <p class="resume_ex_txt01 fw500">이젠아카데미 강남캠퍼스</p>
+                  <div class="resume_line"></div>
+                  <p class="resume_ex_txt02">
+                    <span class="fw700">2023</span> 06 - 11
+                  </p>
+                </div>
+                <p class="resume_ex_txt03">UI · UX디자인 프론트엔드 과정</p>
+              </li>
+            </ul>
+          </div>
+          <div class="resume_edu">
+            <p class="resume_edu_title fw500">
+              <span class="type">EDUCATION</span>
+            </p>
+            <ul class="resume_edu_lists inner flex-col">
+              <li class="resume_edu_list">
+                <div class="resume_edu_list_top flex">
+                  <p class="resume_edu_txt01 fw500">서울호서직업전문학교</p>
+                  <div class="resume_line"></div>
+                  <p class="resume_edu_txt02">
+                    <span class="fw700">2021</span> 02 -
+                    <span class="fw700">2023</span> 02
+                  </p>
+                </div>
+                <p class="resume_edu_txt03">게임그래픽 · 애니메이션 학과</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- resume end -->
     </div>
   </body>
 </html>

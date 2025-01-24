@@ -24,5 +24,19 @@
     }
 
     fillMarquee(); // Ensure enough items for a seamless loop
+
+    //lenis
+    // Initialize Lenis
+    const lenis = new Lenis({
+      smooth: true, // Enable smooth scrolling
+      lerp: 0.1, // Adjust for the smoothness effect (lower = smoother)
+    });
+
+    // Hook Lenis to the animation frame
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   });
 });

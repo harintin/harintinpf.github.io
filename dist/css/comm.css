@@ -107,6 +107,8 @@ section {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   line-height: 1;
 }
 
@@ -283,6 +285,10 @@ section {
 
 .fw700 {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .dot {
@@ -596,10 +602,14 @@ section {
   top: 0;
   left: 0;
   font-size: 240px;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
   mix-blend-mode: difference;
   writing-mode: vertical-lr;
   line-height: 0.71;
+  display: flex;
+}
+.work_title .type {
+  display: block;
 }
 
 .work_lists {
@@ -669,4 +679,144 @@ section {
   transform: translate(-50%, -50%);
   position: absolute;
   opacity: 0.9;
+}
+
+.resume {
+  padding: 360px 0;
+}
+
+.resume_title {
+  font-size: 240px;
+  letter-spacing: -0.06em;
+  overflow: hidden;
+  mix-blend-mode: difference;
+  margin-bottom: 110px;
+}
+.resume_title .type {
+  display: block;
+}
+
+.resume_top {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume_top_left {
+  z-index: 2;
+  width: 400px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.resume_top_left > p {
+  letter-spacing: -0.03em;
+  font-family: "Pretendard";
+}
+
+.resume_name {
+  font-size: 48px;
+  margin-right: 20px;
+}
+
+.resume_name_en {
+  font-size: 36px;
+}
+
+.resume_birth {
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.resume_top_right {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.resume_top_right > p {
+  text-align: right;
+  font-size: 36px;
+}
+
+.resume_top .glass_box {
+  z-index: 1;
+  top: -200px;
+  right: 240px;
+  transform: rotate(100deg);
+}
+
+.resume_ex_title {
+  overflow: hidden;
+  font-size: 64px;
+  letter-spacing: -0.03em;
+}
+.resume_ex_title .type {
+  display: block;
+}
+
+.resume_ex_lists {
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.resume_ex_list_top {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+.resume_ex_list_top > p {
+  font-size: 24px;
+  font-family: "Pretendard";
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+.resume_line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  transform-origin: left;
+  opacity: 0.2;
+}
+
+.resume_ex_txt03 {
+  font-size: 24px;
+  font-family: "Pretendard";
+  padding-left: 15px;
+}
+
+.resume_edu {
+  padding-top: 70px;
+}
+
+.resume_edu_title {
+  overflow: hidden;
+  font-size: 64px;
+  letter-spacing: -0.03em;
+}
+.resume_edu_title .type {
+  display: block;
+}
+
+.resume_edu_lists {
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.resume_edu_list_top {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.resume_edu_list_top > p {
+  font-size: 24px;
+  font-family: "Pretendard";
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+.resume_edu_txt03 {
+  font-size: 24px;
+  font-family: "Pretendard";
+  padding-left: 15px;
 }

@@ -67,14 +67,12 @@
 
     // about 애니메이션
     (function () {
-      ScrollTrigger.defaults({
-        toggleActions: "restart pause resume reverse",
-      });
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".about",
-            start: "top center",
+            start: "top 60%",
+            toggleActions: "restart pause resume reverse",
           },
         })
         .from(".about_title .type", {
@@ -101,6 +99,87 @@
         );
     })();
 
+    // work 애니메이션
+    (function () {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".work",
+            start: "top 40%",
+          },
+        })
+        .from(".work_title .type", {
+          x: "-120%",
+          duration: 1,
+          ease: "expo.out",
+          stagger: 0.15,
+        });
+    })();
+
+    // resume 애니메이션
+    (function () {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".resume",
+            start: "top 40%",
+            toggleActions: "restart pause resume reverse",
+          },
+        })
+        .from(".resume_title .type", {
+          opacity: 0,
+          duration: 0.5,
+          y: "100%",
+          stagger: 0.1,
+        })
+        .from(
+          ".resume_deco.glass_box",
+          {
+            duration: 0.6,
+            opacity: 0,
+            y: -200,
+            rotate: "60deg",
+          },
+          "-=0.4"
+        );
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".resume_ex",
+            start: "top 60%",
+          },
+        })
+        .from(".resume_ex_title .type", {
+          duration: 0.5,
+          y: "100%",
+        })
+        .from(".resume_ex_list .resume_line", {
+          scaleX: 0,
+          ease: "expo.out",
+          duration: 1.5,
+          stagger: 0.3,
+        });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".resume_edu",
+            start: "top 60%",
+          },
+        })
+        .from(".resume_edu_title .type", {
+          duration: 0.5,
+          y: "100%",
+        })
+        .from(".resume_edu_list .resume_line", {
+          scaleX: 0,
+          ease: "expo.out",
+          duration: 1.5,
+          stagger: 0.3,
+        });
+    })();
+
     // hover
     const list = document.querySelectorAll(".work_list");
 
@@ -108,12 +187,10 @@
       li_img.addEventListener("mousemove", function (e) {
         const hoverImage = li_img.querySelector(".hover_image");
         if (hoverImage) {
-          // Get the position of the mouse relative to the work_list
           const rect = li_img.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
 
-          // Update hover_image position
           hoverImage.style.transform = `translate(${x}px, ${y}px)`;
         }
       });
