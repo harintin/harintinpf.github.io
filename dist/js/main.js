@@ -1,20 +1,20 @@
 (function ($) {
   $(document).ready(function () {
-    // ScrollTrigger 플러그인 등록
     gsap.registerPlugin(ScrollTrigger);
 
+    // header
     (function () {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".header",
-            start: "top center",
+            trigger: ".intro",
+            start: "center 45%",
           },
         })
         .from(".header", {
           opacity: 0,
-          y: -200,
-          duration: 1,
+          y: -150,
+          duration: 2,
           ease: "expo.out",
         });
     })();
@@ -30,18 +30,18 @@
         })
         .from(".text_motion", {
           y: "100%",
-          duration: 0.7,
+          duration: 1,
           ease: "expo.out",
-          stagger: 0.4,
+          stagger: 0.3,
         });
 
-      var typed = new Typed(".typingTxt", {
+      new Typed(".typingTxt", {
         strings: [
           "변화하는 시대에 맞춰 편리한<br />코드를 그려내는 웹 아티스트.<br />사용자 친화적인 웹 환경을<br />만들어 갑니다.",
         ],
-        typeSpeed: 70,
+        typeSpeed: 40,
         backSpeed: 30,
-        startDelay: 1800,
+        startDelay: 1400,
         smartBackspace: true,
         cursorChar: "|",
         backDelay: 1000,
@@ -178,6 +178,78 @@
           duration: 1.5,
           stagger: 0.3,
         });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".resume_bottom",
+            start: "top center",
+          },
+        })
+        .add([
+          gsap.from(".resume_skill_title .type", {
+            duration: 0.5,
+            y: "100%",
+          }),
+          gsap.from(".resume_skill_list", {
+            duration: 0.5,
+            opacity: 0,
+            y: "100%",
+            stagger: 0.15,
+          }),
+        ])
+        .add(
+          [
+            gsap.from(".resume_lan_title .type", {
+              duration: 0.5,
+              y: "100%",
+            }),
+            // gsap.from(".resume_skill_list", {
+            //   duration: 0.5,
+            //   opacity: 0,
+            //   y: "100%",
+            //   stagger: 0.15,
+            // }),
+          ],
+          "-=1.2"
+        );
+    })();
+
+    // contact 애니메이션
+    (function () {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".contact",
+            start: "top top",
+            pin: true,
+            scrub: 1.7,
+          },
+        })
+        .to(".contact_txt_bf", {
+          display: "none",
+          opacity: 0,
+          filter: "blur(50px)",
+        })
+        .add(
+          [
+            gsap.from(".contact_txt", {
+              display: "none",
+              opacity: 0,
+              filter: "blur(10px)",
+              scale: 5,
+            }),
+            gsap.fromTo(
+              ".contact_bg",
+              { clipPath: "circle(0% at 50% 50%)" },
+              {
+                clipPath: "circle(100% at 50% 50%)",
+                ease: "power1.inOut",
+              }
+            ),
+          ],
+          "-=0.4"
+        );
     })();
 
     // hover
@@ -207,6 +279,37 @@
         if (hoverImage) {
           hoverImage.style.visibility = "hidden";
         }
+      });
+    });
+
+    // Lenis
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // GSAP과 Lenis 동기화
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // menu
+    const menuLinks = document.querySelectorAll(".menu_box");
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        lenis.scrollTo(targetElement, {
+          duration: 1.5,
+          offset: 0,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
       });
     });
   });
