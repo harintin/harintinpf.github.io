@@ -175,7 +175,7 @@
         .from(".resume_edu_list .resume_line", {
           scaleX: 0,
           ease: "expo.out",
-          duration: 1.5,
+          duration: 1.2,
           stagger: 0.3,
         });
 
@@ -204,14 +204,18 @@
               duration: 0.5,
               y: "100%",
             }),
-            // gsap.from(".resume_skill_list", {
-            //   duration: 0.5,
-            //   opacity: 0,
-            //   y: "100%",
-            //   stagger: 0.15,
-            // }),
           ],
           "-=1.2"
+        )
+        .from(
+          ".resume_lan_txts",
+          {
+            duration: 0.5,
+            opacity: 0,
+            y: "-100%",
+            stagger: 0.15,
+          },
+          "-=1"
         );
     })();
 

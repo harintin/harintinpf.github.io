@@ -477,6 +477,17 @@
         display: block;
     }
 }
+.resume_lan_txts {
+    padding-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+        padding-top: 40px;
+    }
+}
+.resume_lan_txt {
+    font-size: 24px;
+}
 
 //contact
 .contact {
