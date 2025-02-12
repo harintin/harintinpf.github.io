@@ -2,23 +2,6 @@
   $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    // header
-    (function () {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".intro",
-            start: "center 45%",
-          },
-        })
-        .from(".header", {
-          opacity: 0,
-          y: -150,
-          duration: 2,
-          ease: "expo.out",
-        });
-    })();
-
     // intro 애니메이션
     (function () {
       gsap
@@ -37,7 +20,7 @@
 
       new Typed(".typingTxt", {
         strings: [
-          "변화하는 시대에 맞춰 편리한<br />코드를 그려내는 웹 아티스트.<br />사용자 친화적인 웹 환경을<br />만들어 갑니다.",
+          "변화하는 시대에 맞춰 편리한<br />코드를 그려내는 웹 퍼블리셔.<br />사용자 친화적이고 감각적인<br />웹 환경을 만들어 갑니다.",
         ],
         typeSpeed: 40,
         backSpeed: 30,
@@ -96,7 +79,13 @@
             }),
           ],
           "-=0.4"
-        );
+        )
+        .from(".about_txt .type", {
+          duration: 0.5,
+          y: "120%",
+          stagger: 0.25,
+          ease: "expo.out",
+        });
     })();
 
     // work 애니메이션
@@ -110,6 +99,7 @@
         })
         .from(".work_title .type", {
           x: "-120%",
+          opacity: 0,
           duration: 1,
           ease: "expo.out",
           stagger: 0.15,
@@ -122,7 +112,7 @@
         .timeline({
           scrollTrigger: {
             trigger: ".resume",
-            start: "top 40%",
+            start: "top 60%",
             toggleActions: "restart pause resume reverse",
           },
         })
@@ -241,7 +231,7 @@
               display: "none",
               opacity: 0,
               filter: "blur(10px)",
-              scale: 5,
+              scale: 8,
             }),
             gsap.fromTo(
               ".contact_bg",
@@ -255,6 +245,8 @@
           "-=0.4"
         );
     })();
+
+    window.addEventListener("resize", ScrollTrigger.update);
 
     // hover
     const list = document.querySelectorAll(".work_list");
