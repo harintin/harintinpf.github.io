@@ -80,12 +80,16 @@
           ],
           "-=0.4"
         )
-        .from(".about_txt .type", {
-          duration: 0.5,
-          y: "120%",
-          stagger: 0.25,
-          ease: "expo.out",
-        });
+        .from(
+          ".about_txt .type",
+          {
+            duration: 0.5,
+            y: "120%",
+            stagger: 0.25,
+            ease: "expo.out",
+          },
+          "-=0.3"
+        );
     })();
 
     // work 애니메이션

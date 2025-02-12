@@ -120,6 +120,9 @@ body {
     width: 3.2rem;
 }
 .header_barcode {
+    position: absolute;
+    left: 50%;
+    margin-left: -4.25rem;
     width: 8.5rem;
     img {
         width: 100%;
