@@ -766,3 +766,32 @@
     background-color: #fff;
     mix-blend-mode: difference;
 }
+.contact_content {
+    font-family: "Pretendard";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    gap: 15px;
+}
+.contact_link {
+    width: 200px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f0f0f;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+.contact_link_icon {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.contact_link_txt {
+    font-weight: 300;
+    font-size: 1.6rem;
+}

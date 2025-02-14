@@ -221,7 +221,7 @@
             trigger: ".contact",
             start: "top top",
             pin: true,
-            scrub: 1.7,
+            scrub: 3,
           },
         })
         .to(".contact_txt_bf", {
@@ -247,7 +247,10 @@
             ),
           ],
           "-=0.4"
-        );
+        )
+        .from(".contact_link", {
+          opacity: 0,
+        });
     })();
 
     window.addEventListener("resize", ScrollTrigger.update);

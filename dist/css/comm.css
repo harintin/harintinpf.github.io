@@ -1226,3 +1226,146 @@ section {
   background-color: #fff;
   mix-blend-mode: difference;
 }
+
+.contact_content {
+  font-family: "Pretendard";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  gap: 15px;
+}
+
+.contact_link {
+  width: 200px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 0 20px;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.contact_link_icon {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.contact_link_txt {
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.projects {
+  height: 100vh;
+  background: linear-gradient(transparent, #111);
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+}
+
+.projects_inner {
+  box-sizing: border-box;
+  padding: 15rem 4rem 0;
+}
+
+.projects_top {
+  align-items: center;
+  width: 100%;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #333;
+}
+
+.projects_icons {
+  margin-bottom: 2rem;
+}
+
+.projects_icon_pc {
+  margin-right: 1rem;
+}
+
+.projects_icon_pc.hide {
+  display: none;
+}
+
+.projects_icon_m.hide {
+  display: none;
+}
+
+.projects_title {
+  font-size: 5rem;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.projects_period {
+  margin-bottom: 1rem;
+}
+
+.projects_stacks {
+  align-items: center;
+}
+
+.projects_stack {
+  padding: 4px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  color: #000;
+  margin-left: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-family: "Roboto";
+  font-size: 1.5rem;
+}
+
+.projects_content {
+  padding-top: 4rem;
+}
+
+.projects_link {
+  display: block;
+  max-width: 700px;
+  margin-bottom: 4rem;
+  position: relative;
+}
+.projects_link img {
+  width: 100%;
+}
+
+.projects_link_icon {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.projects_pages {
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.projects_pages_txt {
+  padding-left: 1rem;
+}
+
+.projects_page {
+  padding: 4px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 1rem;
+  background-color: #000;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+.projects_desc {
+  font-size: 1.5rem;
+  opacity: 0.4;
+  margin-top: 1rem;
+}
