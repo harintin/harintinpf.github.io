@@ -1369,3 +1369,34 @@ section {
   opacity: 0.4;
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 730px) {
+  .projects {
+    font-size: 3.2rem;
+  }
+  .projects_icons {
+    margin-bottom: 4rem;
+  }
+  .projects_icon_pc {
+    margin-right: 2rem;
+  }
+  .projects_title {
+    font-size: 7rem;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+  .projects_period {
+    margin-bottom: 3rem;
+  }
+  .projects_stack {
+    font-size: 2rem;
+  }
+  .projects_desc {
+    font-size: 2.4rem;
+  }
+  .projects_pages {
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+}
