@@ -1,4 +1,4 @@
-(function ($) {
+window.onload = function () {
   $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -264,10 +264,12 @@
 
     window.addEventListener("resize", ScrollTrigger.update);
 
-    // hover
+    //호버 애니메이션
     const list = document.querySelectorAll(".work_list");
 
     list.forEach((li_img) => {
+      let isScrolling;
+
       li_img.addEventListener("mousemove", function (e) {
         const hoverImage = li_img.querySelector(".hover_image");
         if (hoverImage) {
@@ -275,10 +277,12 @@
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
 
-          hoverImage.style.transform = `translate(${x}px, ${y}px)`;
+          hoverImage.style.transform = `translate(${x}px, ${y}px)`; //커서 위치
+          hoverImage.style.visibility = "visible";
         }
       });
 
+      // 마우스 오버 시 hover 이미지 보이기
       li_img.addEventListener("mouseover", function () {
         const hoverImage = li_img.querySelector(".hover_image");
         if (hoverImage) {
@@ -286,11 +290,41 @@
         }
       });
 
+      // 마우스 리브 시 hover 이미지 숨기기
       li_img.addEventListener("mouseleave", function () {
         const hoverImage = li_img.querySelector(".hover_image");
         if (hoverImage) {
           hoverImage.style.visibility = "hidden";
         }
+      });
+
+      // 스크롤 시 hover 이미지 숨기기
+      window.addEventListener("scroll", function () {
+        const hoverImage = li_img.querySelector(".hover_image");
+        if (hoverImage) {
+          hoverImage.style.visibility = "hidden"; // 스크롤 중에 이미지 안 보이게
+        }
+
+        // 스크롤 종료 후 커서가 있는 곳에 hover 이미지 보이게
+        clearTimeout(isScrolling); // 기존 타이머 제거
+        isScrolling = setTimeout(function () {
+          const hoverImage = li_img.querySelector(".hover_image");
+          if (hoverImage && li_img.matches(":hover")) {
+            // 스크롤 후, 커서 위치에 맞게 이미지 보이게
+            const rect = li_img.getBoundingClientRect();
+            const x = window.mouseX - rect.left;
+            const y = window.mouseY - rect.top;
+
+            hoverImage.style.transform = `translate(${x}px, ${y}px)`;
+            hoverImage.style.visibility = "visible";
+          }
+        }, 150);
+      });
+
+      // 마우스 위치 기록
+      li_img.addEventListener("mousemove", function (e) {
+        window.mouseX = e.clientX;
+        window.mouseY = e.clientY;
       });
     });
 
@@ -325,4 +359,4 @@
       });
     });
   });
-})(jQuery);
+};
