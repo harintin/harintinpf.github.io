@@ -248,14 +248,17 @@
     transform: rotate(-160deg);
 }
 .about_txts {
-    padding: 10rem 4rem 0;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20rem 4rem 0;
     box-sizing: border-box;
 }
 .about_txt {
     position: relative;
     z-index: 5;
     font-size: $desc;
-    line-height: 1.5;
+    line-height: 1.6;
     overflow: hidden;
     font-weight: 300;
     mix-blend-mode: difference;
@@ -322,7 +325,10 @@
         background-size: auto 100vh;
     }
     .about_title {
-        padding: 0 2rem;
+        padding: 0 4rem;
+    }
+    .about_txts {
+        padding: 10rem 6rem;
     }
     .about_txt {
         font-size: 3rem;
@@ -459,7 +465,7 @@
 }
 @media screen and (max-width: 730px) {
     .work {
-        margin-top: -20rem;
+        margin-top: 0;
     }
     .work_list {
         height: 25rem;
@@ -469,6 +475,9 @@
     }
     .work_arrow {
         padding-left: 6rem;
+    }
+    .hover_image {
+        display: none;
     }
 }
 @media screen and (max-width: 530px) {
@@ -503,7 +512,7 @@
 .resume_top {
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 4rem;
     box-sizing: border-box;
 }
 .resume_top_left {
@@ -527,6 +536,11 @@
     padding-top: 2rem;
     font-size: 2.4rem;
 }
+.resume_email {
+    padding-top: 2rem;
+    font-size: 2.4rem;
+    padding-left: 2rem;
+}
 .resume_top_right {
     z-index: 2;
     display: flex;
@@ -544,7 +558,7 @@
     transform: rotate(100deg);
 }
 .resume_ex {
-    padding: 0 2rem;
+    padding: 0 4rem;
     box-sizing: border-box;
 }
 .resume_ex_title {
@@ -568,7 +582,7 @@
         font-size: 2.4rem;
         font-family: "Pretendard";
         white-space: nowrap;
-        padding: 0 15px;
+        padding: 0 2rem;
     }
 }
 .resume_line {
@@ -584,7 +598,7 @@
     padding-left: 1.5rem;
 }
 .resume_edu {
-    padding: 7rem 2rem 0;
+    padding: 7rem 4rem 0;
     box-sizing: border-box;
 }
 .resume_edu_title {
@@ -618,7 +632,7 @@
 .resume_bottom {
     justify-content: space-between;
     align-items: flex-start;
-    padding: 7rem 2rem 0;
+    padding: 7rem 4rem 0;
 }
 .resume_skill {
     width: 50%;
@@ -716,10 +730,18 @@
         width: 1rem;
         height: 1rem;
     }
+    .resume_top_right {
+        & > p {
+            text-align: right;
+            font-size: 2.7rem;
+        }
+    }
 }
 @media screen and (max-width: 530px) {
     .resume_title {
+        font-size: 19rem;
         margin-top: 3rem;
+        justify-content: center;
     }
     .resume_skill_lists {
         width: 95%;

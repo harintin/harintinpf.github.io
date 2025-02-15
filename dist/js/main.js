@@ -79,14 +79,23 @@
             }),
           ],
           "-=0.4"
-        )
+        );
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".about_txts",
+            start: "top 60%",
+          },
+        })
         .from(
           ".about_txt .type",
           {
-            duration: 0.5,
-            y: "120%",
-            stagger: 0.25,
-            ease: "expo.out",
+            duration: 1,
+            y: "100%",
+            opacity: 0,
+            filter: "blur(20px)",
+            stagger: 0.15,
+            ease: "power2.out",
           },
           "-=0.3"
         );
