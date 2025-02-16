@@ -20,7 +20,7 @@ window.onload = function () {
 
       new Typed(".typingTxt", {
         strings: [
-          "변화하는 시대에 맞춰 편리한<br />코드를 그려내는 웹 퍼블리셔.<br />사용자 친화적이고 감각적인<br />웹 환경을 만들어 갑니다.",
+          "변화하는 시대에 맞춰 코드를<br />디자인 하는 웹 퍼블리셔.<br />사용자 친화적이고 감각적인<br />웹 환경을 만들어 갑니다.",
         ],
         typeSpeed: 40,
         backSpeed: 30,
@@ -157,11 +157,13 @@ window.onload = function () {
           duration: 0.5,
           y: "100%",
         })
-        .from(".resume_ex_list .resume_line", {
-          scaleX: 0,
-          ease: "expo.out",
-          duration: 1.5,
-          stagger: 0.3,
+        .from(".resume_ex_list", {
+          y: "100%",
+          opacity: 0,
+          filter: "blur(10px)",
+          ease: "power2.out",
+          duration: 1,
+          stagger: 0.2,
         });
 
       gsap
@@ -175,11 +177,12 @@ window.onload = function () {
           duration: 0.5,
           y: "100%",
         })
-        .from(".resume_edu_list .resume_line", {
-          scaleX: 0,
-          ease: "expo.out",
-          duration: 1.2,
-          stagger: 0.3,
+        .from(".resume_edu_list", {
+          y: "100%",
+          opacity: 0,
+          filter: "blur(10px)",
+          ease: "power2.out",
+          duration: 1,
         });
 
       gsap
@@ -195,9 +198,11 @@ window.onload = function () {
             y: "100%",
           }),
           gsap.from(".resume_skill_list", {
-            duration: 0.5,
-            opacity: 0,
             y: "100%",
+            opacity: 0,
+            filter: "blur(10px)",
+            ease: "power2.out",
+            duration: 0.5,
             stagger: 0.15,
           }),
         ])
@@ -213,9 +218,11 @@ window.onload = function () {
         .from(
           ".resume_lan_txts",
           {
-            duration: 0.5,
+            y: "100%",
             opacity: 0,
-            y: "-100%",
+            filter: "blur(10px)",
+            ease: "power2.out",
+            duration: 0.5,
             stagger: 0.15,
           },
           "-=1"
@@ -229,8 +236,9 @@ window.onload = function () {
           scrollTrigger: {
             trigger: ".contact",
             start: "top top",
+            end: "bottom top",
             pin: true,
-            scrub: 3,
+            scrub: 2,
           },
         })
         .to(".contact_txt_bf", {
@@ -254,12 +262,12 @@ window.onload = function () {
                 ease: "power1.inOut",
               }
             ),
+            gsap.from(".contact_link", {
+              opacity: 0,
+            }),
           ],
           "-=0.4"
-        )
-        .from(".contact_link", {
-          opacity: 0,
-        });
+        );
     })();
 
     window.addEventListener("resize", ScrollTrigger.update);
