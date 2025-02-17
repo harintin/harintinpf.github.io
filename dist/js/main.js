@@ -236,9 +236,8 @@ window.onload = function () {
           scrollTrigger: {
             trigger: ".contact",
             start: "top top",
-            end: "bottom top",
             pin: true,
-            scrub: 2,
+            scrub: 1.2,
           },
         })
         .to(".contact_txt_bf", {
