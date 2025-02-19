@@ -1296,7 +1296,7 @@ section {
 }
 
 .projects {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(transparent, #111);
   font-family: "Pretendard";
   font-size: 1.8rem;
@@ -1304,7 +1304,7 @@ section {
 
 .projects_inner {
   box-sizing: border-box;
-  padding: 15rem 4rem 0;
+  padding: 15rem 4rem 10rem;
 }
 
 .projects_top {
