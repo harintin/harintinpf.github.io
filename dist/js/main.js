@@ -1,4 +1,4 @@
-window.onload = function () {
+(function ($) {
   $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -366,4 +366,4 @@ window.onload = function () {
       });
     });
   });
-};
+})(jQuery);
